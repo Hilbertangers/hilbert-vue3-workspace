@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "vitepress": "^1.0.0-rc.31",
+    "vitepress-demo-plugin": "^1.5.0"
+  },
+  "dependencies": {
+    "hilbert-vue3-ui": "workspace:^",
+    "vue": "^3.4.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "hilbert-vue3-workspace",
+  "version": "0.1.0",
+  "description": "一个现代化的 Vue3 组件库",
+  "type": "module",
+  "keywords": [
+    "vue",
+    "vue3",
+    "component",
+    "ui",
+    "hilbert"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hilbertangers/hilbert-vue3-workspace"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter hilbert-vue3-ui dev & sleep 3 && pnpm --filter examples dev",
+    "build": "pnpm --filter hilbert-vue3-ui build",
+    "docs:dev": "pnpm --filter docs dev",
+    "docs:build": "pnpm -C docs build",
+    "docs:preview": "pnpm -C docs preview",
+    "typecheck": "vue-tsc --noEmit",
+    "release": "pnpm build && changeset publish"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "angre-ts-lib": "^1.0.0"
+  }
+}

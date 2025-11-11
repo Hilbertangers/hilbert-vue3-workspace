@@ -1,0 +1,25 @@
+---
+layout: home
+
+hero:
+  name: 'hilbert-vue3-ui'
+  text: '现代化的Vue3 组件库'
+  tagline: 使用 TypeScript 构建，支持按需导入
+  actions:
+    - theme: brand
+      text: 开始使用
+      link: /guide/
+    - theme: alt
+      text: 查看组件
+      link: /components/
+
+features:
+  - title: 🎯 Vue 3
+    details: 基于 Vue 3 Composition API 构建
+  - title: 🔧 TypeScript
+    details: 完整的 TypeScript 支持，提供优秀的开发体验
+  - title: 📦 按需导入
+    details: 支持 Tree Shaking，减小打包体积
+  - title: 🛠 开发友好
+    details: 完善的开发工具链和构建配置
+---
