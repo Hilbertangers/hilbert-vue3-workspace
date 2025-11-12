@@ -1,1 +1,0 @@
-import{s as a}from"./index.COxtL80E.js";import{d as s,p as o,b as r,o as t,k as u}from"./framework.BAy9dlhU.js";const f=s({__name:"base",setup(n){const e=o("vue & (vue2 | vue3)");return(p,c)=>(t(),r(u(a),{value:e.value},null,8,["value"]))}});export{f as default};
