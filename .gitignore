@@ -36,3 +36,8 @@ types
 
 # OS
 Thumbs.db
+
+# ── VitePress 特有 ─────────────────────────
+packages/docs/.vitepress/dist
+packages/docs/.vitepress/.temp
+packages/docs/.vitepress/cache
