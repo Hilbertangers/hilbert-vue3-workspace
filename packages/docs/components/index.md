@@ -4,8 +4,6 @@
 
 - [查看详细文档 →](./Flow.md)
 
-### Input 输入框
+### `SkuChoose` 商品 SKU 选择组件
 
-基础表单组件，用于数据输入。
-
-<!-- [查看详细文档 →](/components/input.md) -->
+- [查看详细文档 →](./SkuChoose.md)

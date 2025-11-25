@@ -1,11 +1,15 @@
 import type { App } from 'vue'
 
 import { Flow } from './Flow'
+import { SkuChoose } from './SkuChoose'
+import './Flow/index.less'
+import './SkuChoose/index.less'
 
 // Components
 export * from './Flow'
+export * from './SkuChoose'
 
-const components = [Flow]
+const components = [Flow, SkuChoose]
 
 // Install function
 export function install(app: App) {
@@ -23,4 +27,4 @@ export default {
 }
 
 // Individual exports
-export { Flow }
+export { Flow, SkuChoose }

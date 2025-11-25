@@ -1,0 +1,52 @@
+.sku-choose {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  &-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  &-spec {
+    margin-bottom: 12px;
+    @opt-base: {
+      margin-left: 0;
+      margin-right: 12px;
+      margin-bottom: 8px;
+      padding: 8px 16px;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid #d7d7d7;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    };
+    &-option {
+      @opt-base();
+      background: #f5f5f5;
+      color: #555;
+      &:hover {
+        background: #e8e8e8;
+      }
+    }
+    &-active {
+      @opt-base();
+      background: #ffeee7;
+      color: #c83630;
+      border-color: #e34a40;
+    }
+    &-disabled {
+      @opt-base();
+      background: #f5f5f5;
+      color: #bbb;
+      cursor: not-allowed;
+    }
+  }
+}

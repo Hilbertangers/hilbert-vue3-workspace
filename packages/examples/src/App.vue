@@ -14,7 +14,25 @@
               <input v-model="inputValue" placeholder="请输入内容" />
               <p>当前值: {{ inputValue }}</p>
               <Flow :value="inputValue" />
-              <Flow v-bind="flowProps" @fetch-struct="(v) => {console.log(v)}" />
+              <Flow
+                v-bind="flowProps"
+                @fetch-struct="
+                  v => {
+                    console.log(v)
+                  }
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <h2>sku-choose</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <sku-choose v-bind="skuChooseProps" />
             </div>
           </div>
         </div>
@@ -42,6 +60,31 @@ const flowProps: FlowProps = {
   ],
 }
 
+import SkuChoose from 'hilbert-vue3-ui/SkuChoose'
+import 'hilbert-vue3-ui/SkuChoose/style'
+import type { SkuChooseProps } from 'hilbert-vue3-ui'
+
+const skuChooseProps: SkuChooseProps = {
+  specList: [
+    { title: '颜色', list: ['白色', '粉色'] },
+    { title: '尺寸', list: ['1寸', '2寸'] },
+    { title: '体重', list: ['G', 'KG', 'PG'] },
+  ],
+  specCombinationList: [
+    // {id: "1", specs: ["白色", "1寸", "G"]},
+    { id: '2', specs: ['白色', '1寸', 'KG'] },
+    { id: '3', specs: ['白色', '1寸', 'PG'] },
+    { id: '4', specs: ['白色', '2寸', 'G'] },
+    // {id: "5", specs: ["白色", "2寸", "KG"]},
+    // {id: "6", specs: ["白色", "2寸", "PG"]},
+    // {id: "7", specs: ["粉色", "1寸", "G"]},
+    { id: '8', specs: ['粉色', '1寸', 'KG'] },
+    { id: '9', specs: ['粉色', '1寸', 'PG'] },
+    { id: '10', specs: ['粉色', '2寸', 'G'] },
+    { id: '11', specs: ['粉色', '2寸', 'KG'] },
+    { id: '12', specs: ['粉色', '2寸', 'PG'] },
+  ],
+}
 </script>
 
 <style scoped>

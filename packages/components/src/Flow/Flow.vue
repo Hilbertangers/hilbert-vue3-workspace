@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper" class="view-flow" style="background: #fff;width: 100%;">
+  <div ref="wrapper" class="flow" style="background: #fff;width: 100%;">
     <canvas ref="canvas" />
   </div>
 </template>

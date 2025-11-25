@@ -15,6 +15,7 @@ const __dirname = dirname(__filename)
 const inputs = Object.fromEntries(
   glob
     .sync('src/**/index.ts', { cwd: __dirname })
+    .filter(p => p !== 'src/index.ts')
     .map(p => [p.replace(/^src\//, '').replace('.ts', ''), p])
 )
 
@@ -61,6 +62,7 @@ export default defineConfig([
       {
         file: 'es/index.js',
         format: 'es',
+        assetFileNames: '[name][extname]',
       },
       {
         file: 'lib/index.js',
@@ -76,7 +78,12 @@ export default defineConfig([
         include: /\.[jt]sx?$|\.vue$/,
         loaders: { '.vue': 'ts' },
       }),
-      styles(),
+      styles({
+        mode: 'extract',
+        filename: 'index.css',
+        sourceMap: false,
+        minimize: true,
+      }),
     ],
   },
 ])

@@ -23,16 +23,20 @@
   "scripts": {
     "dev": "pnpm --filter hilbert-vue3-ui dev & sleep 3 && pnpm --filter examples dev",
     "build": "pnpm --filter hilbert-vue3-ui build",
+    "release": "pnpm --C hilbert-vue3-ui release",
     "docs:dev": "pnpm --filter docs dev",
-    "docs:build": "pnpm -C docs build",
-    "docs:preview": "pnpm -C docs preview",
-    "typecheck": "vue-tsc --noEmit",
-    "release": "pnpm build && changeset publish"
+    "docs:build": "pnpm --filter docs build",
+    "docs:preview": "pnpm --filter docs preview",
+    "docs:deploy": "gh-pages -b docs_deploy -d packages/docs/.vitepress/dist",
+    "typecheck": "vue-tsc --noEmit"
   },
   "peerDependencies": {
     "vue": "^3.3.0"
   },
   "dependencies": {
     "angre-ts-lib": "^1.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "1.2.0"
   }
 }

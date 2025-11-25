@@ -1,0 +1,6 @@
+.rollup/*
+node_modules/*
+src/*
+rollup.config.ts
+tsconfig.json
+tsconfig.build.json

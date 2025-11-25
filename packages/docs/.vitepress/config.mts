@@ -4,7 +4,7 @@ import { vitepressDemoPlugin } from 'vitepress-demo-plugin'
 export default defineConfig({
   title: 'hilbert-vue3-ui',
   description: '一个现代化的 Vue3 组件库',
-  base: '/',
+  base: process.env.NODE_ENV === 'production' ? '/hilbert-vue3-workspace/' : '/',
   lang: 'zh-CN',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
@@ -23,7 +23,10 @@ export default defineConfig({
       '/components/': [
         {
           text: '组件概览',
-          items: [{ text: 'Flow 与或逻辑图绘制器', link: '/components/Flow' }],
+          items: [
+            { text: 'Flow 与或逻辑图绘制器', link: '/components/Flow' },
+            { text: 'SkuChoose 商品 SKU 选择组件', link: '/components/SkuChoose' },
+          ],
         },
       ],
     },
