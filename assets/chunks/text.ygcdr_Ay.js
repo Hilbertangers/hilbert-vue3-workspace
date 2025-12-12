@@ -1,0 +1,1 @@
+import{s as a}from"./index.CmPf4Tap.js";import{d as p,p as s,b as r,o as m,k as u}from"./framework.BJG7AQGO.js";const i=p({__name:"text",setup(c){const e=s("12ab");function n(o){console.log("输入完成，当前值为：",o)}return(o,t)=>(m(),r(u(a),{modelValue:e.value,"onUpdate:modelValue":t[0]||(t[0]=l=>e.value=l),type:"text",length:6,onComplete:n},null,8,["modelValue"]))}});export{i as default};
