@@ -23,7 +23,7 @@
   "scripts": {
     "dev": "pnpm --filter hilbert-vue3-ui dev & sleep 3 && pnpm --filter examples dev",
     "build": "pnpm --filter hilbert-vue3-ui build",
-    "release": "pnpm --C hilbert-vue3-ui release",
+    "release": "pnpm --C packages/components release",
     "docs:dev": "pnpm --filter docs dev",
     "docs:build": "pnpm --filter docs build",
     "docs:preview": "pnpm --filter docs preview",

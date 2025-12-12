@@ -7,3 +7,7 @@
 ### `SkuChoose` 商品 SKU 选择组件
 
 - [查看详细文档 →](./SkuChoose.md)
+
+### `PinInput` 验证码输入框
+
+- [查看详细文档 →](./PinInput.md)

@@ -37,6 +37,44 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <h2>pin-input</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div style="margin-bottom: 10px;">
+                密码类型：
+                <pin-input
+                  v-model="pin3"
+                  type="password"
+                  :length="6"
+                  @complete="handleComplete"
+                />
+              </div>
+            <div class="demo-column">
+              <div style="margin-bottom: 10px;">
+                数字类型：
+                <pin-input
+                  v-model="pin1"
+                  type="number"
+                  disabled
+                  :length="6"
+                  @complete="handleComplete"
+                />
+              </div>
+              <div style="margin-bottom: 10px;">
+                数字字母类型：
+                <pin-input
+                  v-model="pin2"
+                  type="text"
+                  :length="4"
+                  @complete="handleComplete"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -84,6 +122,16 @@ const skuChooseProps: SkuChooseProps = {
     { id: '11', specs: ['粉色', '2寸', 'KG'] },
     { id: '12', specs: ['粉色', '2寸', 'PG'] },
   ],
+}
+
+import PinInput from 'hilbert-vue3-ui/PinInput'
+import 'hilbert-vue3-ui/PinInput/style'
+
+const pin1 = ref(1234)
+const pin2 = ref('')
+const pin3 = ref('')
+function handleComplete(value: string) {
+  console.log('输入完成，当前值为：', value)
 }
 </script>
 

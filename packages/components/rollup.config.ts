@@ -80,7 +80,6 @@ export default defineConfig([
       }),
       styles({
         mode: 'extract',
-        filename: 'index.css',
         sourceMap: false,
         minimize: true,
       }),
