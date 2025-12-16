@@ -20,6 +20,8 @@ function openSearch() {
   useSpotlight().open()
 }
 
+const affix = process.env.NODE_ENV === 'production' ? '/hilbert-vue3-workspace/' : '/'
+
 const spotlightProps: SpotlightProps = {
   actions: [
     {
@@ -28,7 +30,7 @@ const spotlightProps: SpotlightProps = {
       description: 'flow, 一个通过canvas绘制与或流程图的组件，支持与逻辑，或逻辑，括号逻辑和节点设置',
       onTrigger: () => {
         console.log('go to flow demo')
-        window.location.href = '/components/Flow.html'
+        window.location.href = affix + 'components/Flow.html'
       }
     },
     {
@@ -37,7 +39,7 @@ const spotlightProps: SpotlightProps = {
       description: 'sku-choose, 一个使用加权图实现的商品多规格选择组件',
       onTrigger: () => {
         console.log('go to sku-choose demo')
-        window.location.href = '/components/SkuChoose.html'
+        window.location.href = affix + 'components/SkuChoose.html'
       }
     },
     {
@@ -46,7 +48,7 @@ const spotlightProps: SpotlightProps = {
       description: 'pin-input, 一个验证码输入组件，支持数字、字母、密码、移动端输入，支持自动聚焦，粘贴，回退等功能',
       onTrigger: () => {
         console.log('go to pin-input demo')
-        window.location.href = '/components/PinInput.html'
+        window.location.href = affix + 'components/PinInput.html'
       }
     },
     {
@@ -55,7 +57,7 @@ const spotlightProps: SpotlightProps = {
       description: 'spotlight, 一个基于Fuse.js的全局搜索组件，支持中英文模糊搜索、支持高亮、支持背景毛玻璃',
       onTrigger: () => {
         console.log('go to spotlight demo')
-        window.location.href = '/components/Spotlight.html'
+        window.location.href = affix + 'components/Spotlight.html'
       }
     },
     {
@@ -64,7 +66,7 @@ const spotlightProps: SpotlightProps = {
       description: 'bulb-switch, 一个纯css实现的灯泡开关组件，可以应用项目暗黑模式的开关',
       onTrigger: () => {
         console.log('go to bulb-switch demo')
-        window.location.href = '/components/BulbSwitch.html'
+        window.location.href = affix + 'components/BulbSwitch.html'
       }
     },
   ]
