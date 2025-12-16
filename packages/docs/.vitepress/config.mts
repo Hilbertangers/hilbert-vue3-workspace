@@ -27,6 +27,7 @@ export default defineConfig({
             { text: 'Flow 与或逻辑图绘制器', link: '/components/Flow' },
             { text: 'SkuChoose 商品 SKU 选择组件', link: '/components/SkuChoose' },
             { text: 'PinInput 验证码输入框', link: '/components/PinInput' },
+            { text: 'Spotlight 全局搜索', link: '/components/Spotlight' },
           ],
         },
       ],

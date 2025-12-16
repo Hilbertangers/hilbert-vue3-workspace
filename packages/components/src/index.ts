@@ -3,15 +3,18 @@ import type { App } from 'vue'
 import { Flow } from './Flow'
 import { SkuChoose } from './SkuChoose'
 import { PinInput } from './PinInput'
+import { Spotlight } from './Spotlight'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
+import './Spotlight/index.less'
 
 // Components
 export * from './Flow'
 export * from './SkuChoose'
 export * from './PinInput'
-const components = [Flow, SkuChoose, PinInput]
+export * from './Spotlight'
+const components = [Flow, SkuChoose, PinInput, Spotlight]
 
 // Install function
 export function install(app: App) {
@@ -29,4 +32,4 @@ export default {
 }
 
 // Individual exports
-export { Flow, SkuChoose, PinInput }
+export { Flow, SkuChoose, PinInput, Spotlight }

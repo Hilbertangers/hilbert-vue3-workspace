@@ -11,3 +11,7 @@
 ### `PinInput` 验证码输入框
 
 - [查看详细文档 →](./PinInput.md)
+
+### `Spotlight` 全局搜索
+
+- [查看详细文档 →](./Spotlight.md)
