@@ -1,0 +1,1 @@
+import{s}from"./index.Bfe7nO5B.js";import{d as t,p,b as r,o as m,k as u}from"./framework.ba8B019S.js";const i=t({__name:"password",setup(d){const e=p("");function a(o){console.log("输入完成，当前值为：",o)}return(o,n)=>(m(),r(u(s),{modelValue:e.value,"onUpdate:modelValue":n[0]||(n[0]=l=>e.value=l),type:"password",length:4,onComplete:a},null,8,["modelValue"]))}});export{i as default};

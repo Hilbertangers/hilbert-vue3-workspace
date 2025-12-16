@@ -1,0 +1,1 @@
+import{s as e}from"./index.DGrylQkd.js";import{d as s,b as o,o as l,ak as r,al as t,k as n}from"./framework.ba8B019S.js";const _=s({__name:"nodeMap",setup(p){const a={value:"1&2|3",nodeMap:[{value:"1",label:"校验1",status:!0},{value:"2",label:"校验2",status:!1},{value:"3",label:"不校验"}]};return(u,c)=>(l(),o(n(e),r(t(a)),null,16))}});export{_ as default};

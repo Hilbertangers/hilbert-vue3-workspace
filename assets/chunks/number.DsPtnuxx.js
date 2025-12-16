@@ -1,0 +1,1 @@
+import{s as a}from"./index.Bfe7nO5B.js";import{d as r,p,b as s,o as m,k as u}from"./framework.ba8B019S.js";const i=r({__name:"number",setup(c){const e=p("12");function l(o){console.log("输入完成，当前值为：",o)}return(o,n)=>(m(),s(u(a),{modelValue:e.value,"onUpdate:modelValue":n[0]||(n[0]=t=>e.value=t),type:"number",length:4,onComplete:l},null,8,["modelValue"]))}});export{i as default};
