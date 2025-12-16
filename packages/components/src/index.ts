@@ -4,17 +4,20 @@ import { Flow } from './Flow'
 import { SkuChoose } from './SkuChoose'
 import { PinInput } from './PinInput'
 import { Spotlight } from './Spotlight'
+import { BulbSwitch } from './BulbSwitch'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
 import './Spotlight/index.less'
+import './BulbSwitch/index.less'
 
 // Components
 export * from './Flow'
 export * from './SkuChoose'
 export * from './PinInput'
 export * from './Spotlight'
-const components = [Flow, SkuChoose, PinInput, Spotlight]
+export * from './BulbSwitch'
+const components = [Flow, SkuChoose, PinInput, Spotlight, BulbSwitch]
 
 // Install function
 export function install(app: App) {
@@ -32,4 +35,4 @@ export default {
 }
 
 // Individual exports
-export { Flow, SkuChoose, PinInput, Spotlight }
+export { Flow, SkuChoose, PinInput, Spotlight, BulbSwitch }

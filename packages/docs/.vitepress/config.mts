@@ -28,6 +28,7 @@ export default defineConfig({
             { text: 'SkuChoose 商品 SKU 选择组件', link: '/components/SkuChoose' },
             { text: 'PinInput 验证码输入框', link: '/components/PinInput' },
             { text: 'Spotlight 全局搜索', link: '/components/Spotlight' },
+            { text: 'BulbSwitch 灯泡开关', link: '/components/BulbSwitch' },
           ],
         },
       ],

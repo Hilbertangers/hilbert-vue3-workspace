@@ -95,6 +95,20 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <h2>bulbSwitch</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <div class="BulbSwitchWrapper">
+
+                <bulb-switch :width="200" v-model="light"></bulb-switch>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -254,6 +268,11 @@ function openSearch() {
   useSpotlight().open()
 }
 
+import {BulbSwitch} from 'hilbert-vue3-ui/BulbSwitch'
+import 'hilbert-vue3-ui/BulbSwitch/style'
+
+const light = ref(false)
+
 </script>
 
 <style scoped>
@@ -339,5 +358,13 @@ function openSearch() {
   margin: 0;
   color: var(--ui-color-gray-600);
   font-size: var(--ui-font-size-sm);
+}
+.BulbSwitchWrapper {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #514878;
 }
 </style>

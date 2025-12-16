@@ -58,6 +58,15 @@ const spotlightProps: SpotlightProps = {
         window.location.href = '/components/Spotlight.html'
       }
     },
+    {
+      id: 'bulb-switch',
+      title: '灯泡开关',
+      description: 'bulb-switch, 一个纯css实现的灯泡开关组件，可以应用项目暗黑模式的开关',
+      onTrigger: () => {
+        console.log('go to bulb-switch demo')
+        window.location.href = '/components/BulbSwitch.html'
+      }
+    },
   ]
 }
 

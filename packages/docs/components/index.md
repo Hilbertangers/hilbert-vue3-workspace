@@ -15,3 +15,7 @@
 ### `Spotlight` 全局搜索
 
 - [查看详细文档 →](./Spotlight.md)
+
+### `BulbSwitch` 灯泡开关
+
+- [查看详细文档 →](./BulbSwitch.md)
