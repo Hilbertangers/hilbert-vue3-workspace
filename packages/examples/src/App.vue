@@ -109,6 +109,28 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <h2>angleSlider</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <div style="margin-bottom: 10px;">
+                基础用法：
+                <angle-slider v-model="angle1" />
+              </div>
+              <div style="margin-bottom: 10px;">
+                自定义尺寸：
+                <angle-slider v-model="angle2" :size="150" />
+              </div>
+              <div style="margin-bottom: 10px;">
+                步进模式：
+                <angle-slider v-model="angle3" :use-step="true" :step="10" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -272,6 +294,14 @@ import {BulbSwitch} from 'hilbert-vue3-ui/BulbSwitch'
 import 'hilbert-vue3-ui/BulbSwitch/style'
 
 const light = ref(false)
+
+import {AngleSlider} from 'hilbert-vue3-ui/AngleSlider'
+import 'hilbert-vue3-ui/AngleSlider/style'
+
+
+const angle1 = ref(0)
+const angle2 = ref(0)
+const angle3 = ref(0)
 
 </script>
 

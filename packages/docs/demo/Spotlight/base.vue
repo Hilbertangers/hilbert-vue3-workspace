@@ -4,8 +4,7 @@
       placeholder="Search..."
       style="width: 300px;height: 50px;border: 1px solid #ccc;border-radius: 8px;padding: 0 16px;font-size: 16px;"
       @click="openSearch"
-    >
-    </input>
+    />
     <div>或者键盘快捷键打开：Ctrl/Command + K</div>
     <Spotlight v-bind="spotlightProps" />
   </div>

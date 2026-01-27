@@ -19,3 +19,7 @@
 ### `BulbSwitch` 灯泡开关
 
 - [查看详细文档 →](./BulbSwitch.md)
+
+### `AngleSlider` 角度选择器
+
+- [查看详细文档 →](./AngleSlider.md)
