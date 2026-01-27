@@ -131,6 +131,22 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <h2>MultiDonutChart</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <MultiDonutChart
+                :chartParam="chartParam"
+                width="600px"
+                height="600px"
+                v-if="chartParam"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -298,10 +314,51 @@ const light = ref(false)
 import {AngleSlider} from 'hilbert-vue3-ui/AngleSlider'
 import 'hilbert-vue3-ui/AngleSlider/style'
 
+import {MultiDonutChart} from 'hilbert-vue3-ui/MultiDonutChart'
 
 const angle1 = ref(0)
 const angle2 = ref(0)
 const angle3 = ref(0)
+
+const chartParam = ref<{
+  data: Array<{
+    name: string;
+    color: string;
+    tips: string;
+    value: number;
+  }>;
+} | null>(null);
+
+setTimeout(() => {
+  chartParam.value = {
+    data: [
+      {
+        name: '高消费会员',
+        color: '#0055FE',
+        tips: '单均金额>25.8/单',
+        value: 300,
+      },
+      {
+        name: '中高消费会员',
+        color: '#88DDFF',
+        tips: '21.5元/单<单均金额<25.8元/单',
+        value: 200,
+      },
+      {
+        name: '中消费会员',
+        color: '#FF749D',
+        tips: '17.2元/单<单均金额<21.5元/单',
+        value: 100,
+      },
+      {
+        name: '低消费会员',
+        color: '#FCDD69',
+        tips: '单均金额<17.2元/单',
+        value: 50,
+      },
+    ]
+  };
+}, 100);
 
 </script>
 

@@ -23,3 +23,7 @@
 ### `AngleSlider` 角度选择器
 
 - [查看详细文档 →](./AngleSlider.md)
+
+### `MultiDonutChart` 多层环形图
+
+- [查看详细文档 →](./MultiDonutChart.md)

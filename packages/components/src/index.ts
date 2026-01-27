@@ -6,6 +6,7 @@ import { PinInput } from './PinInput'
 import { Spotlight } from './Spotlight'
 import { BulbSwitch } from './BulbSwitch'
 import { AngleSlider } from './AngleSlider'
+import { MultiDonutChart } from './MultiDonutChart'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
@@ -20,7 +21,8 @@ export * from './PinInput'
 export * from './Spotlight'
 export * from './BulbSwitch'
 export * from './AngleSlider'
-const components = [Flow, SkuChoose, PinInput, Spotlight, BulbSwitch, AngleSlider]
+export * from './MultiDonutChart'
+const components = [Flow, SkuChoose, PinInput, Spotlight, BulbSwitch, AngleSlider, MultiDonutChart]
 
 // Install function
 export function install(app: App) {
@@ -38,4 +40,4 @@ export default {
 }
 
 // Individual exports
-export { Flow, SkuChoose, PinInput, Spotlight, BulbSwitch, AngleSlider }
+export { Flow, SkuChoose, PinInput, Spotlight, BulbSwitch, AngleSlider, MultiDonutChart }

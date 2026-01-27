@@ -21,6 +21,9 @@ importers:
 
   packages/components:
     dependencies:
+      echarts:
+        specifier: ^6.0.0
+        version: 6.0.0
       element-resize-detector:
         specifier: ^1.2.4
         version: 1.2.4
@@ -1143,6 +1146,9 @@ packages:
   domutils@2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
 
+  echarts@6.0.0:
+    resolution: {integrity: sha512-Tte/grDQRiETQP4xz3iZWSvoHrkCQtwqd6hs+mifXcjrCuo2iKWbajFObuLJVBlDIJlOzgQPd1hsaKt/3+OMkQ==}
+
   electron-to-chromium@1.5.244:
     resolution: {integrity: sha512-OszpBN7xZX4vWMPJwB9illkN/znA8M36GQqQxi6MNy9axWxhOfJyZZJtSLQCpEFLHP2xK33BiWx9aIuIEXVCcw==}
 
@@ -2010,6 +2016,9 @@ packages:
     resolution: {integrity: sha512-pkonvlKk8/ZuR0D5tLW8ljt5I8kmxp2XKymhepUeOdCEfKpZaktSArkLHZt76OB1ZvO9bssUsDty4SWhLvZpLg==}
     engines: {node: '>=0.10.0'}
 
+  tslib@2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -2150,6 +2159,9 @@ packages:
   yaml@1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
+
+  zrender@6.0.0:
+    resolution: {integrity: sha512-41dFXEEXuJpNecuUQq6JlbybmnHaqqpGlbH1yxnA5V9MMP4SbohSVZsJIwz+zdjQXSSlR1Vc34EgH1zxyTDvhg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -3206,6 +3218,11 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 4.3.1
 
+  echarts@6.0.0:
+    dependencies:
+      tslib: 2.3.0
+      zrender: 6.0.0
+
   electron-to-chromium@1.5.244: {}
 
   element-plus@2.11.7(vue@3.5.22(typescript@5.9.3)):
@@ -4115,6 +4132,8 @@ snapshots:
     dependencies:
       escape-string-regexp: 1.0.5
 
+  tslib@2.3.0: {}
+
   tslib@2.8.1: {}
 
   typescript@5.9.3: {}
@@ -4263,5 +4282,9 @@ snapshots:
   yallist@3.1.1: {}
 
   yaml@1.10.2: {}
+
+  zrender@6.0.0:
+    dependencies:
+      tslib: 2.3.0
 
   zwitch@2.0.4: {}

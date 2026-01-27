@@ -30,6 +30,7 @@ export default defineConfig({
             { text: 'Spotlight 全局搜索', link: '/components/Spotlight' },
             { text: 'BulbSwitch 灯泡开关', link: '/components/BulbSwitch' },
             { text: 'AngleSlider 角度选择器', link: '/components/AngleSlider' },
+            { text: 'MultiDonutChart 多层环形图', link: '/components/MultiDonutChart' },
           ],
         },
       ],
