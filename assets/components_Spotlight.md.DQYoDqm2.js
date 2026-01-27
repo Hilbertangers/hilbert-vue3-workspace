@@ -5,8 +5,7 @@ import{p as h,D as p,v as c,ae as u,C as m,c as g,o as f,j as e,af as b,G as o,a
       placeholder="Search..."
       style="width: 300px;height: 50px;border: 1px solid #ccc;border-radius: 8px;padding: 0 16px;font-size: 16px;"
       @click="openSearch"
-    >
-    </input>
+    />
     <div>或者键盘快捷键打开：Ctrl/Command + K</div>
     <Spotlight v-bind="spotlightProps" />
   </div>
