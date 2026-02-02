@@ -1,29 +1,14 @@
-import * as echarts from 'echarts/core'
-import { BarChart, LineChart, PieChart } from 'echarts/charts'
-import {
-  TitleComponent,
-  TooltipComponent,
-  GridComponent,
-  DatasetComponent,
-  TransformComponent,
-  LegendComponent,
-} from 'echarts/components'
-import { LabelLayout, UniversalTransition } from 'echarts/features'
+import { init, use } from 'echarts/core'
+import { PieChart } from 'echarts/charts'
+import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components'
+import { LabelLayout } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
 
-echarts.use([
-  TitleComponent,
-  TooltipComponent,
-  GridComponent,
-  DatasetComponent,
-  TransformComponent,
-  BarChart,
-  PieChart,
-  LabelLayout,
-  UniversalTransition,
-  CanvasRenderer,
-  LineChart,
-  LegendComponent,
-])
+use([TitleComponent, TooltipComponent, PieChart, LabelLayout, CanvasRenderer, LegendComponent])
 
-export default echarts
+// 导出配置好的 echarts 对象，包含 init 方法
+const echartsInstance = {
+  init,
+}
+
+export default echartsInstance
