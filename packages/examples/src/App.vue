@@ -147,6 +147,52 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <h2>SignaturePad</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <div class="signature-pad-demo">
+                <p>网格背景：</p>
+                <SignaturePad
+                  :background="{
+                    type: 'grid',
+                    color: '#e5e5e5',
+                    gridSize: 20,
+                    opacity: 0.2
+                  }"
+                  @save="handleSave"
+                />
+              </div>
+              <div class="signature-pad-demo">
+                <p>横线背景：</p>
+                <SignaturePad
+                  :background="{
+                    type: 'line',
+                    color: '#e5e5e5',
+                    lineHeight: 40,
+                    opacity: 0.2
+                  }"
+                  @save="handleSave"
+                />
+              </div>
+              <div class="signature-pad-demo">
+                <p>无背景：</p>
+                <SignaturePad
+                  :background="{
+                    type: 'line',
+                    color: '#e5e5e5',
+                    lineHeight: 40,
+                    opacity: 0
+                  }"
+                  @save="handleSave"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -316,6 +362,9 @@ import 'hilbert-vue3-ui/AngleSlider/style'
 
 import {MultiDonutChart} from 'hilbert-vue3-ui/MultiDonutChart'
 
+import {SignaturePad} from 'hilbert-vue3-ui/SignaturePad'
+import 'hilbert-vue3-ui/SignaturePad/style'
+
 const angle1 = ref(0)
 const angle2 = ref(0)
 const angle3 = ref(0)
@@ -359,6 +408,11 @@ setTimeout(() => {
     ]
   };
 }, 100);
+
+function handleSave(dataUrl: string) {
+  console.log('签名图片数据:', dataUrl)
+  // 这里可以处理签名图片数据
+}
 
 </script>
 
@@ -453,5 +507,18 @@ setTimeout(() => {
     align-items: center;
     justify-content: center;
     background: #514878;
+}
+
+.signature-pad-demo {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 20px;
+}
+
+.signature-pad-demo p {
+    margin: 0 0 10px 0;
+    color: var(--ui-color-gray-700);
+    font-size: var(--ui-font-size-sm);
 }
 </style>

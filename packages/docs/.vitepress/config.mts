@@ -31,6 +31,7 @@ export default defineConfig({
             { text: 'BulbSwitch 灯泡开关', link: '/components/BulbSwitch' },
             { text: 'AngleSlider 角度选择器', link: '/components/AngleSlider' },
             { text: 'MultiDonutChart 多层环形图', link: '/components/MultiDonutChart' },
+            { text: 'SignaturePad 笔锋签字板', link: '/components/SignaturePad' },
           ],
         },
       ],

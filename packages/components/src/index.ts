@@ -7,12 +7,14 @@ import { Spotlight } from './Spotlight'
 import { BulbSwitch } from './BulbSwitch'
 import { AngleSlider } from './AngleSlider'
 import { MultiDonutChart } from './MultiDonutChart'
+import { SignaturePad } from './SignaturePad'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
 import './Spotlight/index.less'
 import './BulbSwitch/index.less'
 import './AngleSlider/index.less'
+import './SignaturePad/index.less'
 
 // Components
 export * from './Flow'
@@ -22,7 +24,17 @@ export * from './Spotlight'
 export * from './BulbSwitch'
 export * from './AngleSlider'
 export * from './MultiDonutChart'
-const components = [Flow, SkuChoose, PinInput, Spotlight, BulbSwitch, AngleSlider, MultiDonutChart]
+export * from './SignaturePad'
+const components = [
+  Flow,
+  SkuChoose,
+  PinInput,
+  Spotlight,
+  BulbSwitch,
+  AngleSlider,
+  MultiDonutChart,
+  SignaturePad,
+]
 
 // Install function
 export function install(app: App) {
@@ -40,4 +52,13 @@ export default {
 }
 
 // Individual exports
-export { Flow, SkuChoose, PinInput, Spotlight, BulbSwitch, AngleSlider, MultiDonutChart }
+export {
+  Flow,
+  SkuChoose,
+  PinInput,
+  Spotlight,
+  BulbSwitch,
+  AngleSlider,
+  MultiDonutChart,
+  SignaturePad,
+}

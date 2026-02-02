@@ -27,3 +27,7 @@
 ### `MultiDonutChart` 多层环形图
 
 - [查看详细文档 →](./MultiDonutChart.md)
+
+### `SignaturePad` 笔锋签字板
+
+- [查看详细文档 →](./SignaturePad.md)
