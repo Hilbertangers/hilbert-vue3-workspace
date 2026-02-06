@@ -8,6 +8,7 @@ import { BulbSwitch } from './BulbSwitch'
 import { AngleSlider } from './AngleSlider'
 import { MultiDonutChart } from './MultiDonutChart'
 import { SignaturePad } from './SignaturePad'
+import Screenshots from './Screenshots'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
@@ -15,6 +16,7 @@ import './Spotlight/index.less'
 import './BulbSwitch/index.less'
 import './AngleSlider/index.less'
 import './SignaturePad/index.less'
+import './Screenshots/index.less'
 
 // Components
 export * from './Flow'
@@ -25,6 +27,7 @@ export * from './BulbSwitch'
 export * from './AngleSlider'
 export * from './MultiDonutChart'
 export * from './SignaturePad'
+export * from './Screenshots'
 const components = [
   Flow,
   SkuChoose,
@@ -34,6 +37,7 @@ const components = [
   AngleSlider,
   MultiDonutChart,
   SignaturePad,
+  Screenshots,
 ]
 
 // Install function
@@ -61,4 +65,5 @@ export {
   AngleSlider,
   MultiDonutChart,
   SignaturePad,
+  Screenshots,
 }

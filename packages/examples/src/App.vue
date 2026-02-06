@@ -16,11 +16,6 @@
               <Flow :value="inputValue" />
               <Flow
                 v-bind="flowProps"
-                @fetch-struct="
-                  v => {
-                    console.log(v)
-                  }
-                "
               />
             </div>
           </div>
@@ -187,6 +182,33 @@
                     opacity: 0
                   }"
                   @save="handleSave"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Screenshots</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <div class="screenshots-demo">
+                <button @click="startScreenshots = true">开启截图</button>
+                <img
+                  v-if="!startScreenshots && screenshotImage"
+                  :src="screenshotImage"
+                  alt="截图结果"
+                  style="display: block; width: 500px; height: 500px;"
+                />
+                <Screenshots
+                  v-if="startScreenshots"
+                  :image="screenshotImage"
+                  :width="500"
+                  :height="500"
+                  @onCancel="handleScreenshotsCancel"
+                  @onOk="handleScreenshotsOk"
                 />
               </div>
             </div>
@@ -369,6 +391,23 @@ const angle1 = ref(0)
 const angle2 = ref(0)
 const angle3 = ref(0)
 
+import {Screenshots} from 'hilbert-vue3-ui/Screenshots'
+import 'hilbert-vue3-ui/Screenshots/style'
+
+const startScreenshots = ref(false)
+const screenshotImage = ref('/screenshot.png')
+
+function handleScreenshotsCancel() {
+  startScreenshots.value = false
+  console.log('Screenshots::CANCEL')
+}
+
+function handleScreenshotsOk({ viewer, dataURL }: { viewer: any; dataURL: string }) {
+  startScreenshots.value = false
+  screenshotImage.value = dataURL
+  console.log('Screenshots::OK', dataURL, viewer)
+}
+
 const chartParam = ref<{
   data: Array<{
     name: string;
@@ -520,5 +559,26 @@ function handleSave(dataUrl: string) {
     margin: 0 0 10px 0;
     color: var(--ui-color-gray-700);
     font-size: var(--ui-font-size-sm);
+}
+
+.screenshots-demo {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+}
+
+.screenshots-demo button {
+    padding: 8px 16px;
+    background: var(--ui-color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--ui-border-radius-md);
+    cursor: pointer;
+    font-size: var(--ui-font-size-base);
+    margin-bottom: 16px;
+}
+
+.screenshots-demo button:hover {
+    opacity: 0.9;
 }
 </style>

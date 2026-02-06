@@ -36,6 +36,7 @@ types
 
 # OS
 Thumbs.db
+UMS.md
 
 # ── VitePress 特有 ─────────────────────────
 packages/docs/.vitepress/dist
