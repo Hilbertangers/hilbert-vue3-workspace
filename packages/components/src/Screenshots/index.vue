@@ -49,8 +49,8 @@ const emit = defineEmits<{
 
 const bodyRef = ref<HTMLDivElement>()
 
-function onEmit(event: string, args: any[]) {
-  if (event === 'onOk' && Array.isArray(args)) {
+function onEmit(event: string, ...args: any[]) {
+  if (event === 'onOk') {
     emit('onOk', args[0])
   } else if (event === 'onCancel') {
     emit('onCancel')
@@ -132,22 +132,22 @@ function setViewer({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2:
   // 把图形限制在元素里面
   if (x1 < 0) {
     x1 = 0
-    x2 = store.viewer!.x2
+    x2 = store.viewer!.x2 ?? 0
   }
 
   if (x2 > store.width) {
     x2 = store.width
-    x1 = store.viewer!.x1
+    x1 = store.viewer!.x1 ?? 0
   }
 
   if (y1 < 0) {
     y1 = 0
-    y2 = store.viewer!.y2
+    y2 = store.viewer!.y2 ?? 0
   }
 
   if (y2 > store.height) {
     y2 = store.height
-    y1 = store.viewer!.y1
+    y1 = store.viewer!.y1 ?? 0
   }
 
   mutations.setContext((state) => ({

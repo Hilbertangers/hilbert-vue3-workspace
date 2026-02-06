@@ -189,7 +189,7 @@ function getCallbacks() {
   }
 }
 
-function onFocus(e: FocusEvent) {
+function onFocus(_e: FocusEvent) {
   isFocus.value = true
 }
 
@@ -388,7 +388,7 @@ defineExpose({
   },
 
   mousemove(e: MouseEvent, args: { el: HTMLElement; ctx: CanvasRenderingContext2D; context: any; setContext: Function }, pointInStroke: any) {
-    const { el, context, setContext } = args
+    const { el, setContext } = args
     const { left, top } = el.getBoundingClientRect()
     const x = e.clientX - left
     const y = e.clientY - top
@@ -431,7 +431,7 @@ defineExpose({
     }
   },
 
-  mouseup(e: MouseEvent, args: { el: HTMLElement; ctx: CanvasRenderingContext2D; context: any; setContext: Function }) {
+  mouseup(_e: MouseEvent, args: { el: HTMLElement; ctx: CanvasRenderingContext2D; context: any; setContext: Function }) {
     if (text.value) {
       if (text.value.history[0].ready) {
         text.value.history.shift()

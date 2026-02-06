@@ -28,33 +28,33 @@ const state = reactive({
 })
 
 const EditPointersResize = computed(() => ({
-  top: (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => ({ x1, y1: y, x2, y2 }),
-  'top-left': (x: number, y: number, x1: number, y1: number, x2: number, y2: number, xp: number, yp: number) => ({ x1: x1 + x - xp, y1: y1 + y - yp, x2, y2 }),
-  'top-right': (x: number, y: number, x1: number, y1: number, x2: number, y2: number, xp: number, yp: number) => ({ x1, y1: y1 + y - yp, x2: x2 + x - xp, y2 }),
-  left: (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => ({ x1: x, y1, x2, y2 }),
-  right: (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => ({ x1, y1, x2: x, y2 }),
-  bottom: (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => ({ x1, y1, x2, y2: y }),
-  'bottom-left': (x: number, y: number, x1: number, y1: number, x2: number, y2: number, xp: number, yp: number) => ({ x1: x1 + x - xp, y1, x2, y2: y2 + y - yp }),
-  'bottom-right': (x: number, y: number, x1: number, y1: number, x2: number, y2: number, xp: number, yp: number) => ({ x1, y1, x2: x2 + x - xp, y2: y2 + y - yp })
+  top: (_x: number, y: number, x1: number, _y1: number, x2: number, y2: number) => ({ x1, y1: y, x2, y2 }),
+  'top-left': (x: number, y: number, x1: number, y1: number, _x2: number, _y2: number, xp: number, yp: number) => ({ x1: x1 + x - xp, y1: y1 + y - yp, x2: _x2, y2: _y2 }),
+  'top-right': (x: number, y: number, _x1: number, y1: number, x2: number, _y2: number, xp: number, yp: number) => ({ x1: _x1, y1: y1 + y - yp, x2: x2 + x - xp, y2: _y2 }),
+  left: (x: number, _y: number, _x1: number, y1: number, _x2: number, y2: number) => ({ x1: x, y1, x2: _x2, y2 }),
+  right: (x: number, _y: number, x1: number, y1: number, _x2: number, y2: number) => ({ x1, y1, x2: x, y2 }),
+  bottom: (_x: number, y: number, x1: number, _y1: number, x2: number, _y2: number) => ({ x1, y1: _y1, x2, y2: y }),
+  'bottom-left': (x: number, y: number, x1: number, _y1: number, _x2: number, y2: number, xp: number, yp: number) => ({ x1: x1 + x - xp, y1: _y1, x2: _x2, y2: y2 + y - yp }),
+  'bottom-right': (x: number, y: number, _x1: number, _y1: number, x2: number, y2: number, xp: number, yp: number) => ({ x1: _x1, y1: _y1, x2: x2 + x - xp, y2: y2 + y - yp })
 }))
 
 const EditPointersFlip = computed(() => ({
-  'top-left': (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => {
+  'top-left': (x: number, y: number, _x1: number, _y1: number, x2: number, y2: number) => {
     if (x >= x2 && y >= y2) return { name: 'bottom-right', cursor: 'nwse-resize' }
     if (x >= x2) return { name: 'top-right', cursor: 'nesw-resize' }
     if (y >= y2) return { name: 'bottom-left', cursor: 'nesw-resize' }
   },
-  'top-right': (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => {
+  'top-right': (x: number, y: number, x1: number, _y1: number, _x2: number, y2: number) => {
     if (x <= x1 && y >= y2) return { name: 'bottom-left', cursor: 'nesw-resize' }
     if (x <= x1) return { name: 'top-left', cursor: 'nwse-resize' }
     if (y >= y2) return { name: 'bottom-right', cursor: 'nwse-resize' }
   },
-  'bottom-left': (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => {
+  'bottom-left': (x: number, y: number, _x1: number, y1: number, x2: number, _y2: number) => {
     if (x >= x2 && y <= y1) return { name: 'top-right', cursor: 'nesw-resize' }
     if (x >= x2) return { name: 'bottom-right', cursor: 'nwse-resize' }
     if (y <= y1) return { name: 'top-left', cursor: 'nwse-resize' }
   },
-  'bottom-right': (x: number, y: number, x1: number, y1: number, x2: number, y2: number) => {
+  'bottom-right': (x: number, y: number, x1: number, y1: number, _x2: number, _y2: number) => {
     if (x <= x1 && y <= y1) return { name: 'top-left', cursor: 'nwse-resize' }
     if (x <= x1) return { name: 'bottom-left', cursor: 'nesw-resize' }
     if (y <= y1) return { name: 'top-right', cursor: 'nesw-resize' }
@@ -85,6 +85,11 @@ function draw(ctx: CanvasRenderingContext2D, action: any) {
   path.ellipse(x, y, a, b, 0, 0, 2 * Math.PI)
   ctx.stroke(path)
   action.path = path
+}
+
+function setUndoPriority(context: any): number {
+  const priorities = context.stack.map((t: any) => t.history[0]?.undoPriority || 0)
+  return Math.max(...priorities, 0) + 1
 }
 
 function setEditPointers(record: any) {
@@ -198,7 +203,8 @@ function sizeColorEdit(type: string, value: any) {
     if (state.ellipse.history[0][type] === value) return
     const record = {
       ...state.ellipse.history[0],
-      path: new Path2D()
+      path: new Path2D(),
+      undoPriority: setUndoPriority(store)
     }
     record[type] = value
     state.ellipse.history.unshift(record)
@@ -269,6 +275,7 @@ defineExpose({
     if (state.isNew && state.ellipse) {
       if (state.ellipse.ready) {
         delete state.ellipse.ready
+        state.ellipse.history[0].undoPriority = setUndoPriority(context)
         context.stack.push(state.ellipse)
       }
 
@@ -357,7 +364,7 @@ defineExpose({
         if (state.ellipse.history[0].ready) {
           state.ellipse.history.shift()
         }
-        state.ellipse.history[0].undoPriority = 1
+        state.ellipse.history[0].undoPriority = setUndoPriority(args.context)
 
         if (state.resize.isDown) {
           state.resize.isDown = false

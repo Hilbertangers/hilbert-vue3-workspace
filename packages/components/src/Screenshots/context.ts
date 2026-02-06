@@ -21,9 +21,11 @@ interface ViewerData {
   moving?: boolean
 }
 
-interface ActionItem {
+type ActionItem = {
   key: any
   value: Record<string, any>
+} | {
+  type: string
 }
 
 interface StackItem {

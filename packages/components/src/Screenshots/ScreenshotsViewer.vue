@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { store, mutations, getActionChangeRef } from './context'
 import ScreenshotsViewerBar from './ScreenshotsViewerBar.vue'
 import ScreenshotsViewerEditPoint from './ScreenshotsViewerEditPoint.vue'
@@ -73,10 +73,10 @@ const size = computed(() => {
   }
   const { x1, y1, x2, y2 } = store.viewer
   return {
-    x: x1,
-    y: y1,
-    width: x2 - x1,
-    height: y2 - y1
+    x: x1 ?? 0,
+    y: y1 ?? 0,
+    width: (x2 ?? 0) - (x1 ?? 0),
+    height: (y2 ?? 0) - (y1 ?? 0)
   }
 })
 
@@ -175,10 +175,12 @@ async function onMousedown(e: MouseEvent, type: string) {
   } else {
     const current = handlePointInRecord(e)
     if (current.type && (current.type !== action.type)) {
-      const Action = store.actions.find((t: any) => t.key.type === current.type)?.key
+      const ActionItem = store.actions.find((t: any): t is { key: any; value: Record<string, any> } => {
+        return typeof t === 'object' && 'key' in t && (t.key as any).type === current.type
+      })?.key
 
-      if (Action) {
-        const { actionRef: nextActionRef } = await onAction(Action)
+      if (ActionItem) {
+        const { actionRef: nextActionRef } = await onAction(ActionItem)
 
         if (nextActionRef) {
           if (typeof nextActionRef.mousemove === 'function') {
@@ -253,7 +255,7 @@ function resize(e: MouseEvent) {
   if (!viewerData.value) return
   const x = e.clientX - (startPoint.value?.x || 0)
   const y = e.clientY - (startPoint.value?.y || 0)
-  let { x1, y1, x2, y2 } = viewerData.value
+  let { x1 = 0, y1 = 0, x2 = 0, y2 = 0 } = viewerData.value
 
   switch (actionType.value) {
     case 'top':
@@ -340,7 +342,6 @@ function handlePointInRecord(e: MouseEvent) {
 }
 
 async function onAction(Action: any) {
-  console.log("🚀 ~ onAction ~ Action:", Action)
   const lastAction = store.action
   const lastActionRef = store.actionRef
 
@@ -360,11 +361,11 @@ async function onAction(Action: any) {
   ) {
     if (Action.type === 'ok') {
       setTimeout(() => { // 处理文本action时需要宏任务一下，优先text的blur事件
-        setTimeout(() => {
+        nextTick(() => {
           // @ts-ignore
           let _nextAction = new Action(actionArgs.value)
           Action = Object.keys(_nextAction).length ? _nextAction : null
-        }, 0)
+        })
       }, 16)
     } else {
       // @ts-ignore
@@ -380,7 +381,6 @@ async function onAction(Action: any) {
   let actionRef = null
   if (Action) {
     actionRef = await getActionChangeRef()
-    console.log("🚀 ~ onAction ~ actionRef:", actionRef)
   }
   return {
     action: Action,

@@ -45,8 +45,8 @@ const drag = ref({ isDown: false, point: null as { x: number; y: number } | null
 const resize = ref({ isDown: false, name: '' })
 
 const EditPointersResize: Record<string, ResizeFunction> = {
-  start: (x, y, x1, y1, x2, y2) => ({ x1: x, y1: y, x2, y2 }),
-  end: (x, y, x1, y1, x2, y2) => ({ x1, y1, x2: x, y2: y })
+  start: (x, y, _x1, _y1, x2, y2) => ({ x1: x, y1: y, x2, y2 }),
+  end: (_x, _y, x1, y1, _x2, _y2) => ({ x1, y1, x2: _x, y2: _y })
 }
 
 onMounted(() => {

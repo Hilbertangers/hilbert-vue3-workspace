@@ -9,7 +9,8 @@ export default class Cancel {
       viewer: null,
       action: null,
       stack: [],
-      cursor: null,
+      state: {},
+      cursor: null
     })
   }
 }

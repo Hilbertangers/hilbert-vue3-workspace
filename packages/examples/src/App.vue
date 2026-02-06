@@ -404,7 +404,6 @@ function handleScreenshotsCancel() {
 
 function handleScreenshotsOk({ viewer, dataURL }: { viewer: any; dataURL: string }) {
   startScreenshots.value = false
-  screenshotImage.value = dataURL
   console.log('Screenshots::OK', dataURL, viewer)
 }
 

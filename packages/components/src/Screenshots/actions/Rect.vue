@@ -49,33 +49,33 @@ const drag = ref({ isDown: false, point: null as { x: number; y: number } | null
 const resize = ref({ isDown: false, name: '' })
 
 const EditPointersResize: Record<string, ResizeFunction> = {
-  'top-center': (x, y, x1, y1, x2, y2) => ({ x1, y1: y, x2, y2 }),
-  'top-left': (x, y, x1, y1, x2, y2) => ({ x1: x, y1: y, x2, y2 }),
-  'top-right': (x, y, x1, y1, x2, y2) => ({ x1, y1: y, x2: x, y2 }),
-  'center-left': (x, y, x1, y1, x2, y2) => ({ x1: x, y1, x2, y2 }),
-  'center-right': (x, y, x1, y1, x2, y2) => ({ x1, y1, x2: x, y2 }),
-  'bottom-left': (x, y, x1, y1, x2, y2) => ({ x1: x, y1, x2, y2: y }),
-  'bottom-center': (x, y, x1, y1, x2, y2) => ({ x1, y1, x2, y2: y }),
-  'bottom-right': (x, y, x1, y1, x2, y2) => ({ x1, y1, x2: x, y2: y })
+  'top-center': (_x, y, x1, _y1, x2, y2) => ({ x1, y1: y, x2, y2 }),
+  'top-left': (x, y, _x1, _y1, x2, y2) => ({ x1: x, y1: y, x2, y2 }),
+  'top-right': (_x, y, x1, _y1, _x2, y2) => ({ x1, y1: y, x2: _x, y2 }),
+  'center-left': (x, _y, _x1, y1, _x2, y2) => ({ x1: x, y1, x2: _x2, y2 }),
+  'center-right': (x, _y, x1, y1, _x2, y2) => ({ x1, y1, x2: x, y2 }),
+  'bottom-left': (x, _y, _x1, _y2, x2, y1) => ({ x1: x, y1: _y2, x2, y2: y1 }),
+  'bottom-center': (_x, y, x1, _y1, x2, _y2) => ({ x1, y1: _y1, x2, y2: y }),
+  'bottom-right': (_x, _y, x1, y1, _x2, _y2) => ({ x1, y1, x2: _x, y2: _y })
 }
 
 const EditPointersFlip: Record<string, FlipFunction> = {
-  'top-left': (x, y, x1, y1, x2, y2) => {
+  'top-left': (x, y, _x1, _y1, x2, y2) => {
     if (x >= x2 && y >= y2) return { name: 'bottom-right', cursor: 'nwse-resize' }
     if (x >= x2) return { name: 'top-right', cursor: 'nesw-resize' }
     if (y >= y2) return { name: 'bottom-left', cursor: 'nesw-resize' }
   },
-  'top-right': (x, y, x1, y1, x2, y2) => {
+  'top-right': (x, y, x1, _y1, _x2, y2) => {
     if (x <= x1 && y >= y2) return { name: 'bottom-left', cursor: 'nesw-resize' }
     if (x <= x1) return { name: 'top-left', cursor: 'nwse-resize' }
     if (y >= y2) return { name: 'bottom-right', cursor: 'nwse-resize' }
   },
-  'bottom-left': (x, y, x1, y1, x2, y2) => {
+  'bottom-left': (x, y, _x1, y1, x2, _y2) => {
     if (x >= x2 && y <= y1) return { name: 'top-right', cursor: 'nesw-resize' }
     if (x >= x2) return { name: 'bottom-right', cursor: 'nwse-resize' }
     if (y <= y1) return { name: 'top-left', cursor: 'nwse-resize' }
   },
-  'bottom-right': (x, y, x1, y1, x2, y2) => {
+  'bottom-right': (x, y, x1, y1, _x2, _y2) => {
     if (x <= x1 && y <= y1) return { name: 'top-left', cursor: 'nwse-resize' }
     if (x <= x1) return { name: 'bottom-left', cursor: 'nesw-resize' }
     if (y <= y1) return { name: 'top-right', cursor: 'nwse-resize' }

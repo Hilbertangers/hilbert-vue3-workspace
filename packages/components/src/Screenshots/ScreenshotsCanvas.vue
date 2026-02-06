@@ -32,11 +32,10 @@ const emit = defineEmits<{
 }>()
 
 function draw() {
-  if (!store.image) return
-  if (!ctx.value) return
+  if (!store.image || !ctx.value) return
 
   nextTick(() => {
-    if (!ctx.value) return
+    if (!ctx.value || !store.image) return
     ctx.value.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0)
     ctx.value.clearRect(0, 0, store.width, store.height)
     ctx.value.drawImage(

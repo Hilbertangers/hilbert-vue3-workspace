@@ -6,13 +6,14 @@ export default class Ok {
   constructor({ el, context, setContext, emit }: any) {
     emit('onOk', {
       viewer: { ...context.viewer },
-      dataURL: el.toDataURL('image/png'),
+      dataURL: el.toDataURL('image/png')
     })
     setContext({
       viewer: null,
       action: null,
       stack: [],
-      cursor: null,
+      state: {},
+      cursor: null
     })
   }
 }
