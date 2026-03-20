@@ -31,3 +31,7 @@
 ### `SignaturePad` 笔锋签字板
 
 - [查看详细文档 →](./SignaturePad.md)
+
+### `Screenshots` 截图组件
+
+- [查看详细文档 →](./Screenshots.md)
