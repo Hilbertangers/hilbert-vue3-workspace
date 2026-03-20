@@ -215,6 +215,39 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <h2>NumberRoll</h2>
+        <div class="component-demo">
+          <div class="demo-group">
+            <h3>基础用法</h3>
+            <div class="demo-column">
+              <p>当前值: {{ numberRollValue }}</p>
+              <NumberRoll v-model="numberRollValue" />
+            </div>
+          </div>
+          <div class="demo-group">
+            <h3>自定义样式</h3>
+            <div class="demo-column">
+              <p>大尺寸 - 当前值: {{ numberRollValue2 }}</p>
+              <NumberRoll
+                v-model="numberRollValue2"
+                :width="70"
+                :height="80"
+                :fontSize="48"
+                :transitionDuration="800"
+              />
+            </div>
+          </div>
+          <div class="demo-group">
+            <h3>控制按钮</h3>
+            <div class="demo-row">
+              <button @click="numberRollValue++" class="control-button">+1</button>
+              <button @click="numberRollValue--" class="control-button">-1</button>
+              <button @click="numberRollValue = Math.floor(Math.random() * 1000)" class="control-button">随机</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -452,6 +485,12 @@ function handleSave(dataUrl: string) {
   // 这里可以处理签名图片数据
 }
 
+import { NumberRoll } from 'hilbert-vue3-ui/NumberRoll'
+import 'hilbert-vue3-ui/NumberRoll/style'
+
+const numberRollValue = ref(0)
+const numberRollValue2 = ref(123)
+
 </script>
 
 <style scoped>
@@ -579,5 +618,23 @@ function handleSave(dataUrl: string) {
 
 .screenshots-demo button:hover {
     opacity: 0.9;
+}
+
+.control-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: var(--ui-font-size-base);
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.control-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
 }
 </style>

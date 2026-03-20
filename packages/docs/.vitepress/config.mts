@@ -33,6 +33,7 @@ export default defineConfig({
             { text: 'MultiDonutChart 多层环形图', link: '/components/MultiDonutChart' },
             { text: 'SignaturePad 笔锋签字板', link: '/components/SignaturePad' },
             { text: 'Screenshots 截图工具', link: '/components/Screenshots' },
+            { text: 'NumberRoll 数字滚动', link: '/components/NumberRoll' },
           ],
         },
       ],

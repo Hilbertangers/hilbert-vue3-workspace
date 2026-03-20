@@ -35,3 +35,7 @@
 ### `Screenshots` 截图组件
 
 - [查看详细文档 →](./Screenshots.md)
+
+### `NumberRoll` 数字滚动
+
+- [查看详细文档 →](./NumberRoll.md)
