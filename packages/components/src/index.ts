@@ -10,6 +10,7 @@ import { MultiDonutChart } from './MultiDonutChart'
 import { SignaturePad } from './SignaturePad'
 import Screenshots from './Screenshots'
 import { NumberRoll } from './NumberRoll'
+import Marquee from './Marquee'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
@@ -19,6 +20,7 @@ import './AngleSlider/index.less'
 import './SignaturePad/index.less'
 import './Screenshots/index.less'
 import './NumberRoll/index.less'
+import './Marquee/index.less'
 
 // Components
 export * from './Flow'
@@ -31,6 +33,7 @@ export * from './MultiDonutChart'
 export * from './SignaturePad'
 export * from './Screenshots'
 export * from './NumberRoll'
+export * from './Marquee'
 const components = [
   Flow,
   SkuChoose,
@@ -42,6 +45,7 @@ const components = [
   SignaturePad,
   Screenshots,
   NumberRoll,
+  Marquee,
 ]
 
 // Install function
@@ -71,4 +75,5 @@ export {
   SignaturePad,
   Screenshots,
   NumberRoll,
+  Marquee,
 }

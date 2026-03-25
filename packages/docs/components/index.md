@@ -39,3 +39,7 @@
 ### `NumberRoll` 数字滚动
 
 - [查看详细文档 →](./NumberRoll.md)
+
+### `Marquee` 跑马灯
+
+- [查看详细文档 →](./Marquee.md)

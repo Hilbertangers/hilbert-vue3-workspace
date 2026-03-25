@@ -34,6 +34,7 @@ export default defineConfig({
             { text: 'SignaturePad 笔锋签字板', link: '/components/SignaturePad' },
             { text: 'Screenshots 截图工具', link: '/components/Screenshots' },
             { text: 'NumberRoll 数字滚动', link: '/components/NumberRoll' },
+            { text: 'Marquee 跑马灯', link: '/components/Marquee' },
           ],
         },
       ],
