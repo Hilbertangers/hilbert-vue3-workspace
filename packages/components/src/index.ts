@@ -11,6 +11,7 @@ import { SignaturePad } from './SignaturePad'
 import Screenshots from './Screenshots'
 import { NumberRoll } from './NumberRoll'
 import Marquee from './Marquee'
+import Skeleton from './Skeleton'
 import './Flow/index.less'
 import './SkuChoose/index.less'
 import './PinInput/index.less'
@@ -21,6 +22,7 @@ import './SignaturePad/index.less'
 import './Screenshots/index.less'
 import './NumberRoll/index.less'
 import './Marquee/index.less'
+import './Skeleton/index.less'
 
 // Components
 export * from './Flow'
@@ -34,6 +36,7 @@ export * from './SignaturePad'
 export * from './Screenshots'
 export * from './NumberRoll'
 export * from './Marquee'
+export * from './Skeleton'
 const components = [
   Flow,
   SkuChoose,
@@ -46,6 +49,7 @@ const components = [
   Screenshots,
   NumberRoll,
   Marquee,
+  Skeleton,
 ]
 
 // Install function
@@ -76,4 +80,5 @@ export {
   Screenshots,
   NumberRoll,
   Marquee,
+  Skeleton,
 }

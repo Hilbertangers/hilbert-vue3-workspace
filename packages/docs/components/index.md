@@ -43,3 +43,7 @@
 ### `Marquee` 跑马灯
 
 - [查看详细文档 →](./Marquee.md)
+
+### `Skeleton` 骨架屏
+
+- [查看详细文档 →](./Skeleton.md)

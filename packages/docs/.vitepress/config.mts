@@ -35,6 +35,7 @@ export default defineConfig({
             { text: 'Screenshots 截图工具', link: '/components/Screenshots' },
             { text: 'NumberRoll 数字滚动', link: '/components/NumberRoll' },
             { text: 'Marquee 跑马灯', link: '/components/Marquee' },
+            { text: 'Skeleton 骨架屏', link: '/components/Skeleton' },
           ],
         },
       ],
